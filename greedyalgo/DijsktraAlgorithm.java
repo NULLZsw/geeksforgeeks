@@ -21,6 +21,7 @@ public class DijsktraAlgorithm {
 
     }
     static final int V=9;
+    //用于选择 当前 具有最短距离 且 未被包含在 已计算出最短距离的节点（即 sptSet 中不包含的节点）中的节点
     int minDistance(int dist[], Boolean sptSet[])
     {
         // Initialize min value
@@ -37,7 +38,7 @@ public class DijsktraAlgorithm {
     }
 
     // A utility function to print the constructed distance array
-    void printSolution(int dist[], int n)
+    void printSolution(int dist[])
     {
         System.out.println("Vertex   Distance from Source");
         for (int i = 0; i < V; i++)
@@ -91,6 +92,6 @@ public class DijsktraAlgorithm {
         }
 
         // print the constructed distance array
-        printSolution(dist, V);
+        printSolution(dist);
     }
 }

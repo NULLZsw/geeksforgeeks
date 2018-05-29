@@ -1,7 +1,10 @@
 package dynamicpro;
 
 public class MaxSumRectangle {
-    //看的不懂，不知道怎么选定的矩阵
+    //每次 固定左边的列，和右边的列，将这部分的值求和存入数组中，对这个数组进行一维的
+    //最大 连续和，就是结果
+    //例如当  选中第一列和第三列的时候，数组中结果为 [ -3，3，19，7 ]
+    //这时求得的 最大连续和 ，为3+19+7 = 29，也就是最终的结果
     public static void main (String[] args) throws java.lang.Exception
     {
         findMaxSubMatrix(new int[][] {
@@ -70,7 +73,9 @@ public class MaxSumRectangle {
 
                 for (int i = 0; i < rows; i++) {
                     tmp[i] += a[i][rightCol];
+                    System.out.print(tmp[i] + "\t");
                 }
+                System.out.println();
                 currentResult = kadane(tmp);
                 if (currentResult[0] > maxSum) {
                     maxSum = currentResult[0];

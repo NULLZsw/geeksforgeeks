@@ -1,7 +1,9 @@
 package dynamicpro;
 
-public class LongestCommonSubSequence {
+import org.junit.Test;
 
+public class LongestCommonSubSequence {
+    @Test
     public void test(){
         String s1 = "AGGTAB";
         String s2 = "GXTXAYB";
@@ -10,6 +12,7 @@ public class LongestCommonSubSequence {
         char[] Y=s2.toCharArray();
         int m = X.length;
         int n = Y.length;
+        System.out.println(lcsDynamicProgram(s1.toCharArray(),s2.toCharArray(),s1.length(),s2.length()));
     }
     public int lcsRecursive( char[] X, char[] Y, int m, int n )
     {
